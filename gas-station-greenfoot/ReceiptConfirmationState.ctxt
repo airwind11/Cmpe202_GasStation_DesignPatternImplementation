@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=ReceiptConfirmationState
+comment0.text=\r\n\ Intermediate\ state\ whose\ position\ can\ change\ depending\ upon\ scenario.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
+comment1.params=world\ engine
+comment1.target=ReceiptConfirmationState(greenfoot.World,\ StateEngine)
+comment2.params=
+comment2.target=void\ onEntry()
+comment3.params=
+comment3.target=void\ onExit()
+comment4.params=
+comment4.target=void\ drawUI()
+comment5.params=
+comment5.target=void\ tearDownUI()
+numComments=6

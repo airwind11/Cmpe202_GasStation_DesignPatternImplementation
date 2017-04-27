@@ -1,20 +1,19 @@
 import greenfoot.*;
-/**
- * State where the gas station prompts for a zipcode for validation and waits for a response.
+ /**
+ * Intermediate state whose position can change depending upon scenario.
  * 
  * @author Arun Tej Chennadi
  * @version 1.0
  */
-public class WaitingForZipCodeState implements State 
+public class ReceiptConfirmationState implements State 
 {
     World world;
     StateEngine engine;
     
-    public WaitingForZipCodeState(World world, StateEngine engine){
+    public ReceiptConfirmationState(World world, StateEngine engine){
         this.world = world;
         this.engine = engine;
     }
-    
     
     public void onEntry(){}
     
@@ -24,3 +23,5 @@ public class WaitingForZipCodeState implements State
     
     public void tearDownUI(){}
 }
+
+
