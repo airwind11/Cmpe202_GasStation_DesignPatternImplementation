@@ -15,8 +15,8 @@ public class StateEngine
     State fuelDispensedState;
     State receiptConfirmationState;
     
-    State currentState;
-    State nextState;
+    States currentState;
+    State currentStateObj;
     GasStationType type;
     
     public StateEngine(World world, GasStationType type){
@@ -28,11 +28,28 @@ public class StateEngine
         this.dispensingFuelState = new DispensingFuelState(world, this);
         this.fuelDispensedState =  new FuelDispensedState(world, this);
         this.receiptConfirmationState = new ReceiptConfirmationState(world, this);
+        this.currentState = States.WaitingForCreditCard;
+        this.currentStateObj = this.waitingForCreditCardState;
         
-        
+        this.currentStateObj.onEntry();
     }
     
-    public void start(){
+    public void stateChange(){
+        this.currentStateObj.onExit();
+        getNextState();
+        this.currentStateObj.onEntry();
+    }
     
+    private void getNextState(){
+    
+        
+        switch(this.currentState){
+        case WaitingForCreditCard:
+            this.currentState = States.WaitingForZipCode;
+            this.currentStateObj = this.waitingForZipCodeState;
+            break;
+        default:     
+            break;
+        }
     }
 }
