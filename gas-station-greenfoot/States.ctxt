@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=States
+comment0.text=\r\n\ An\ Enum\ class\ which\ contains\ the\ possible\ states.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
+comment1.params=id
+comment1.target=States(int)
+comment2.params=
+comment2.target=int\ getId()
+numComments=3

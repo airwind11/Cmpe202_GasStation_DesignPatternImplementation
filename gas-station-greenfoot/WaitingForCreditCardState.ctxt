@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=WaitingForCreditCardState
+comment0.text=\r\n\ Initial\ State\ where\ the\ gas\ station\ waits\ for\ a\ card\ swipe.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=void\ onEntry()
+comment2.params=
+comment2.target=void\ onExit()
+comment3.params=
+comment3.target=void\ drawUI()
+comment4.params=
+comment4.target=void\ tearDownUI()
+numComments=5
