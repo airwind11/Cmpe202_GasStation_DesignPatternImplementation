@@ -22,6 +22,8 @@ public class ReceiptConfirmationState implements State
     public void drawUI(){}
     
     public void tearDownUI(){}
+    
+    public void onEvent(EventType event){}
 }
 
 

@@ -23,4 +23,6 @@ public class WaitingForZipCodeState implements State
     public void drawUI(){}
     
     public void tearDownUI(){}
+    
+    public void onEvent(EventType event){}
 }

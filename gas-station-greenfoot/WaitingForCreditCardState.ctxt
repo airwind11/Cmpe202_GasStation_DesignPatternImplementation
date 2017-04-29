@@ -15,4 +15,6 @@ comment6.params=
 comment6.target=void\ drawUI()
 comment7.params=
 comment7.target=void\ tearDownUI()
-numComments=8
+comment8.params=event
+comment8.target=void\ onEvent(EventType)
+numComments=9

@@ -35,6 +35,7 @@ public class WaitingForCreditCardState implements State
     }
     
     public void drawUI(){
+        ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
         this.world.addObject(new Screen(),500,180);
         this.world.addObject(new Button(),150,100);
         this.world.addObject(new Button(),150,150);
@@ -50,4 +51,7 @@ public class WaitingForCreditCardState implements State
     }
     
     public void tearDownUI(){}
+    
+    public void onEvent(EventType event){}
+    
 }

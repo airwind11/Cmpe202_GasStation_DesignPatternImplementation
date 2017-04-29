@@ -22,5 +22,7 @@ public class FuelSelectState implements State
     public void drawUI(){}
     
     public void tearDownUI(){}
+    
+    public void onEvent(EventType event){}
 }
 

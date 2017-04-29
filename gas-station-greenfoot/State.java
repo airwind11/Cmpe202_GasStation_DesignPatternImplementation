@@ -13,4 +13,6 @@ public interface State
     void drawUI();
     
     void tearDownUI();
+    
+    void onEvent(EventType event);
 }
