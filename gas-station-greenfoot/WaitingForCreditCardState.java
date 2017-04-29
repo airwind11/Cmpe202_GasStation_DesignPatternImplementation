@@ -15,11 +15,39 @@ public class WaitingForCreditCardState implements State
         this.engine = engine;
     }
     
-    public void onEntry(){}
+    public void onEntry(){
+        this.drawUI();
+        this.setupEventTriggers();
+        
+    }
     
-    public void onExit(){}
+    private void setupEventTriggers(){
     
-    public void drawUI(){}
+    }
+    
+    private void teardownEventTriggers(){
+    
+    }
+    
+    public void onExit(){
+        this.tearDownUI();
+        this.teardownEventTriggers();
+    }
+    
+    public void drawUI(){
+        this.world.addObject(new Screen(),500,180);
+        this.world.addObject(new Button(),150,100);
+        this.world.addObject(new Button(),150,150);
+        this.world.addObject(new Button(),150,200);
+        this.world.addObject(new Button(),150,250);
+        
+        this.world.addObject(new Button(),850,100);
+        this.world.addObject(new Button(),850,150);
+        this.world.addObject(new Button(),850,200);
+        this.world.addObject(new Button(),850,250);
+        
+        this.world.addObject(new Keypad(),500,450);
+    }
     
     public void tearDownUI(){}
 }

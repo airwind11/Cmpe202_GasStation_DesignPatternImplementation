@@ -34,6 +34,10 @@ public class StateEngine
         this.currentStateObj.onEntry();
     }
     
+    public StateEngine(){
+    
+    }
+    
     public void stateChange(){
         this.currentStateObj.onExit();
         getNextState();

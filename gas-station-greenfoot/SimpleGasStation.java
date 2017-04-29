@@ -16,12 +16,13 @@ public class SimpleGasStation extends World
     public SimpleGasStation()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(800, 800, 1); 
+        super(1400, 800, 1); 
         prepare();
     }
     
     
     private void prepare(){
-        StateEngine engine = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
+        StateEngine engine1 = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
+        StateEngine engine = new StateEngine();
     }
 }
