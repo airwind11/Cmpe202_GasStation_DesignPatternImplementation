@@ -17,21 +17,11 @@ public class WaitingForCreditCardState implements State
     
     public void onEntry(){
         this.drawUI();
-        this.setupEventTriggers();
-        
     }
     
-    private void setupEventTriggers(){
-    
-    }
-    
-    private void teardownEventTriggers(){
-    
-    }
     
     public void onExit(){
         this.tearDownUI();
-        this.teardownEventTriggers();
     }
     
     public void drawUI(){
@@ -44,6 +34,11 @@ public class WaitingForCreditCardState implements State
     
     public void onEvent(EventType event){
         System.out.println(event);
+        if(event != EventType.CARD_SWIPED){
+            Greenfoot.playSound("beep.wav");
+        }else{
+        
+        }
     }
     
 }
