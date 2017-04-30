@@ -16,7 +16,11 @@ public class WaitingForZipCodeState implements State
     }
     
     
-    public void onEntry(){}
+    public void onEntry(){
+        ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
+        simpleUI.render();
+        
+    }
     
     public void onExit(){}
     

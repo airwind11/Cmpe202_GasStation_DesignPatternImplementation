@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.List;
 /**
  * Initial State where the gas station waits for a card swipe.
  * 
@@ -28,16 +29,22 @@ public class WaitingForCreditCardState implements State
         ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
         simpleUI.render();
         
+        CardAndSwipeUI cardSwipe = new CardAndSwipeUI(this, this.world);
+        cardSwipe.render();
+        
     }
     
-    public void tearDownUI(){}
+    public void tearDownUI(){
+        List objects = world.getObjects(null);
+        world.removeObjects(objects);
+    }
     
     public void onEvent(EventType event){
         System.out.println(event);
         if(event != EventType.CARD_SWIPED){
             Greenfoot.playSound("beep.wav");
         }else{
-        
+            this.engine.stateChange();
         }
     }
     
