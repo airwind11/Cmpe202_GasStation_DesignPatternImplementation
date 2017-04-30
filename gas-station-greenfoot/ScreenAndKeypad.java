@@ -9,15 +9,17 @@ public class ScreenAndKeypad
 {
     World world;
     State parentState;
+    Screen screen;
     
     public ScreenAndKeypad(State s, World world){
         this.parentState = s;
         this.world = world;
+        screen = new Screen(this.world);
     }
     
     public void render(){
         //draw screen
-        this.world.addObject(new Screen(),500,180);
+        this.world.addObject(screen,500,180);
         
         //draw left buttons
         this.world.addObject(new Button(this, 1),150,100);
@@ -116,5 +118,13 @@ public class ScreenAndKeypad
           }  
           
           parentState.onEvent(curEvent); 
+    }
+    
+    public void setDisplayMessage(String msg){
+        screen.setDisplayMessage(msg);
+    }
+    
+    public void setButtonMappedMessage(String msg, int buttonNo){
+        screen.setButtonMappedMessage(msg, buttonNo);
     }
 }

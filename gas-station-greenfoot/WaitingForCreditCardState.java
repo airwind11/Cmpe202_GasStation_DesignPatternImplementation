@@ -28,9 +28,10 @@ public class WaitingForCreditCardState implements State
     public void drawUI(){
         ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
         simpleUI.render();
-        
+        simpleUI.setDisplayMessage("Please swipe your card to begin!!");    
         CardAndSwipeUI cardSwipe = new CardAndSwipeUI(this, this.world);
         cardSwipe.render();
+
         
     }
     
