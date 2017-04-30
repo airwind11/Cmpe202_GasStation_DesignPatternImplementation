@@ -19,6 +19,9 @@ public class WaitingForZipCodeState implements State
     public void onEntry(){
         ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
         simpleUI.render();
+        simpleUI.setDisplayMessage("Please enter the zipcode!!");
+        simpleUI.setButtonMappedMessage("Confirm", 5);
+        simpleUI.setButtonMappedMessage("Cancel", 6);
         
     }
     
