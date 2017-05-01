@@ -127,4 +127,8 @@ public class ScreenAndKeypad
     public void setButtonMappedMessage(String msg, int buttonNo){
         screen.setButtonMappedMessage(msg, buttonNo);
     }
+    
+    public void setDynamicMessage(String message) {
+        screen.setDynamicMessage(message);
+    }
 }

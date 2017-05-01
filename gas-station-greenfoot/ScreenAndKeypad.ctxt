@@ -15,4 +15,6 @@ comment6.params=msg
 comment6.target=void\ setDisplayMessage(java.lang.String)
 comment7.params=msg\ buttonNo
 comment7.target=void\ setButtonMappedMessage(java.lang.String,\ int)
-numComments=8
+comment8.params=message
+comment8.target=void\ setDynamicMessage(java.lang.String)
+numComments=9

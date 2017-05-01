@@ -12,6 +12,7 @@ public class Screen extends Actor
     public Message mainDisplay;
     public Message dynamicMessage;
     public World world;
+    public String prompt = "";
     
     public Screen(World world){
         this.world = world;
@@ -34,7 +35,7 @@ public class Screen extends Actor
     }
     
     public void setDynamicMessage(String msg){
-        this.dynamicMessage = new Message(300, 75);
+        this.dynamicMessage = new Message(300, 25);
         this.world.addObject(this.dynamicMessage, 500, 280);
         this.dynamicMessage.setText(msg);
     }
@@ -77,4 +78,6 @@ public class Screen extends Actor
         
         buttonMappedMessages[buttonNo - 1].setText(msg);
     }
+    
+
 }

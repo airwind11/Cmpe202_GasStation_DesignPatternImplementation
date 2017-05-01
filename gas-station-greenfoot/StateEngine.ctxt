@@ -15,4 +15,6 @@ comment6.params=event
 comment6.target=void\ onEvent(EventType)
 comment7.params=
 comment7.target=State\ getWaitingForZipCodeState()
-numComments=8
+comment8.params=
+comment8.target=ScreenAndKeypad\ getDisplayConsole()
+numComments=9

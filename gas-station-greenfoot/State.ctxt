@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=State
-comment0.text=\r\n\ The\ interface\ which\ enforces\ the\ State\ pattern.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
+comment0.text=\n\ The\ interface\ which\ enforces\ the\ State\ pattern.\n\ \n\ @author\ Arun\ Tej\ Chennadi\n\ @version\ 1.0\n
 comment1.params=
 comment1.target=void\ onEntry()
 comment2.params=
@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ drawUI()
 comment4.params=
 comment4.target=void\ tearDownUI()
-numComments=5
+comment5.params=event
+comment5.target=void\ onEvent(EventType)
+numComments=6

@@ -82,5 +82,11 @@ public class StateEngine
         return waitingForZipCodeState;
     }
     
+    public ScreenAndKeypad getDisplayConsole()  {
+        return simpleUI;
+    }
+    
+
+    
 
 }

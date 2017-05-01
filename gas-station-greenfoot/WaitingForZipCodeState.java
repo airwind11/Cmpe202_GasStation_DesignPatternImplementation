@@ -9,6 +9,7 @@ public class WaitingForZipCodeState implements State
 {
     World world;
     StateEngine engine;
+    String zipPrompt = "";
     
     public WaitingForZipCodeState(World world, StateEngine engine){
         this.world = world;
@@ -17,12 +18,10 @@ public class WaitingForZipCodeState implements State
     
     
     public void onEntry(){
-        System.out.println("Moving to waiting for zip code state");
-        //ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
-        //simpleUI.render();
-        //simpleUI.setDisplayMessage("Please enter the zipcode!!");
-        //simpleUI.setButtonMappedMessage("Confirm", 5);
-        //simpleUI.setButtonMappedMessage("Cancel", 6);
+        engine.getDisplayConsole().setDisplayMessage("Please enter the zipcode!!");
+        engine.getDisplayConsole().setButtonMappedMessage("Confirm", 5);
+        engine.getDisplayConsole().setButtonMappedMessage("Cancel", 6);
+        zipPrompt = ""; // Reset prompt
         
     }
     
@@ -32,5 +31,25 @@ public class WaitingForZipCodeState implements State
     
     public void tearDownUI(){}
     
-    public void onEvent(EventType event){}
+    public void onEvent(EventType event) {
+        // TODO: Handle events other than keyPress
+
+        int eid = event.getId();
+        // Beep if the prompt has already 5 characters
+        if (zipPrompt.length() == 5 && eid != 10) {
+            Greenfoot.playSound("beep.wav"); // TODO: This should probably handled by a speaker class or something in StateEngine
+            return;
+        }
+        
+
+        if (eid >= 0 && eid <= 9) {
+            zipPrompt += (eid + "");
+        } else if (eid == 10) { // Backspace
+            if (!zipPrompt.isEmpty()) {
+                zipPrompt = zipPrompt.substring(0, (zipPrompt.length() - 1));
+            } 
+        }
+
+        engine.getDisplayConsole().setDynamicMessage(zipPrompt);
+    }
 }

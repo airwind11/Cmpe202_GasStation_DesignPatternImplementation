@@ -18,6 +18,7 @@ public class WaitingForCreditCardState implements State
     
     public void onEntry(){
         // this.drawUI();
+
     }
     
     
