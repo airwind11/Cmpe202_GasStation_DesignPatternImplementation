@@ -78,8 +78,16 @@ public class StateEngine
         currentStateObj.onEvent(event);
     }
     
+    public State getWaitingForCreditCardState() {
+        return waitingForCreditCardState;
+    }
+    
     public State getWaitingForZipCodeState() {
         return waitingForZipCodeState;
+    }
+    
+    public State getFuelSelectState() {
+        return fuelSelectState;
     }
     
     public ScreenAndKeypad getDisplayConsole()  {

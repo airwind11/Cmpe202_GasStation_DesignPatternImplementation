@@ -32,9 +32,24 @@ public class WaitingForZipCodeState implements State
     public void tearDownUI(){}
     
     public void onEvent(EventType event) {
-        // TODO: Handle events other than keyPress
+
 
         int eid = event.getId();
+        System.out.println(eid);
+
+        // Handling events other than keyPress
+        // TODO: We need to have separate events for these
+        if (eid > 100) {
+            if (eid == 105) {
+                // TODO: If zip code valid?
+                engine.changeStateTo(engine.getFuelSelectState()); return;
+            }
+            if (eid == 106) {
+                // TODO: Back to initial state
+                
+            }
+            
+        }
         // Beep if the prompt has already 5 characters
         if (zipPrompt.length() == 5 && eid != 10) {
             Greenfoot.playSound("beep.wav"); // TODO: This should probably handled by a speaker class or something in StateEngine
