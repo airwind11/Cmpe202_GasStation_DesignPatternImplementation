@@ -8,9 +8,9 @@ import greenfoot.*;
 public class CardAndSwipeUI  
 {
     World world;
-    State parentState;
+    StateEngine parentState;
     
-    public CardAndSwipeUI(State s, World world){
+    public CardAndSwipeUI(StateEngine s, World world){
         this.parentState = s;
         this.world = world;
     }

@@ -19,9 +19,16 @@ public class StateEngine
     State currentStateObj;
     GasStationType type;
     
+    private ScreenAndKeypad simpleUI;
+    private CardAndSwipeUI cardSwipe;
+    
     public StateEngine(World world, GasStationType type){
         this.world = world;
         this.type = type;
+        
+        // Render initial state
+        render();
+        
         this.waitingForCreditCardState = new WaitingForCreditCardState(world,this);
         this.waitingForZipCodeState = new WaitingForZipCodeState(world,this);
         this.fuelSelectState = new FuelSelectState(world, this);
@@ -38,10 +45,20 @@ public class StateEngine
     
     }
     
-    public void stateChange(){
-        this.currentStateObj.onExit();
-        getNextState();
-        this.currentStateObj.onEntry();
+    private void render() {
+        simpleUI = new ScreenAndKeypad(this, this.world);
+        simpleUI.render();
+        simpleUI.setDisplayMessage("Please swipe your card to begin!!"); 
+        
+        cardSwipe = new CardAndSwipeUI(this, this.world);
+        cardSwipe.render();
+
+    }
+    
+    public void changeStateTo(State newState){
+        currentStateObj.onExit();
+        currentStateObj = newState;
+        currentStateObj.onEntry();
     }
     
     private void getNextState(){
@@ -56,4 +73,14 @@ public class StateEngine
             break;
         }
     }
+    
+    public void onEvent(EventType event){
+        currentStateObj.onEvent(event);
+    }
+    
+    public State getWaitingForZipCodeState() {
+        return waitingForZipCodeState;
+    }
+    
+
 }

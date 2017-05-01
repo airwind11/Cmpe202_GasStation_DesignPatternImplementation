@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=FuelDispensedState
-comment0.text=\r\n\ End\ State\ which\ shows\ the\ bill\ and\ displays\ thank\ you\ message.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
+comment0.text=\n\ End\ State\ which\ shows\ the\ bill\ and\ displays\ thank\ you\ message.\n\ \n\ @author\ Arun\ Tej\ Chennadi\n\ @version\ 1.0\n
 comment1.params=world\ engine
 comment1.target=FuelDispensedState(greenfoot.World,\ StateEngine)
 comment2.params=

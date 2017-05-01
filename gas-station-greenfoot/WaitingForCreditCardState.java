@@ -17,27 +17,27 @@ public class WaitingForCreditCardState implements State
     }
     
     public void onEntry(){
-        this.drawUI();
+        // this.drawUI();
     }
     
     
     public void onExit(){
-        this.tearDownUI();
+        // this.tearDownUI();
     }
     
     public void drawUI(){
-        ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
-        simpleUI.render();
-        simpleUI.setDisplayMessage("Please swipe your card to begin!!"); 
-        CardAndSwipeUI cardSwipe = new CardAndSwipeUI(this, this.world);
-        cardSwipe.render();
+        //ScreenAndKeypad simpleUI = new ScreenAndKeypad(this, this.world);
+        //simpleUI.render();
+        //simpleUI.setDisplayMessage("Please swipe your card to begin!!"); 
+        //CardAndSwipeUI cardSwipe = new CardAndSwipeUI(this, this.world);
+        //cardSwipe.render();
 
         
     }
     
     public void tearDownUI(){
-        List objects = world.getObjects(null);
-        world.removeObjects(objects);
+        //List objects = world.getObjects(null);
+        //world.removeObjects(objects);
     }
     
     public void onEvent(EventType event){
@@ -45,7 +45,7 @@ public class WaitingForCreditCardState implements State
         if(event != EventType.CARD_SWIPED){
             Greenfoot.playSound("beep.wav");
         }else{
-            this.engine.stateChange();
+            this.engine.changeStateTo(engine.getWaitingForZipCodeState());
         }
     }
     

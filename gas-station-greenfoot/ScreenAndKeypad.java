@@ -8,10 +8,10 @@ import greenfoot.*;
 public class ScreenAndKeypad  
 {
     World world;
-    State parentState;
+    StateEngine parentState;
     Screen screen;
     
-    public ScreenAndKeypad(State s, World world){
+    public ScreenAndKeypad(StateEngine s, World world){
         this.parentState = s;
         this.world = world;
         screen = new Screen(this.world);
