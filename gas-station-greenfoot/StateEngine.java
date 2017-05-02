@@ -21,6 +21,7 @@ public class StateEngine
     
     private ScreenAndKeypad simpleUI;
     private CardAndSwipeUI cardSwipe;
+    private FuelSelectButtonGroup fuelSelectButtonGroup;
     
     public StateEngine(World world, GasStationType type){
         this.world = world;
@@ -45,6 +46,10 @@ public class StateEngine
     
     }
     
+    public World getWorld() {
+        return world;
+    }
+    
     private void render() {
         simpleUI = new ScreenAndKeypad(this, this.world);
         simpleUI.render();
@@ -52,7 +57,10 @@ public class StateEngine
         
         cardSwipe = new CardAndSwipeUI(this, this.world);
         cardSwipe.render();
-
+        
+        fuelSelectButtonGroup = new FuelSelectButtonGroup(this);
+        fuelSelectButtonGroup.render();
+        
     }
     
     public void changeStateTo(State newState){
