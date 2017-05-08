@@ -8,12 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class OctaneRating89 extends OctaneRating
 {
+ 
+    private FuelSelectButtonGroup parent;
+    public OctaneRating89(FuelSelectButtonGroup parent) {
+        this.parent = parent;
+    }
     /**
      * Act - do whatever the OctaneRating89 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        if(Greenfoot.mousePressed(this)){
+            parent.onFuelSelected(FuelSelectEventType.OCTANE_RATING_89);
+        }
     }    
 }

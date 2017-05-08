@@ -5,12 +5,13 @@ import greenfoot.*;
  * @author Arun Tej Chennadi
  * @version 1.0
  */
-public class FuelSelectState implements State 
+public class WaitingForFuelSelectState implements State 
 {
     World world;
     StateEngine engine;
+    FuelSelectEventType fuelType = null;
     
-    public FuelSelectState(World world, StateEngine engine){
+    public WaitingForFuelSelectState(World world, StateEngine engine){
         this.world = world;
         this.engine = engine;
     }
@@ -26,8 +27,14 @@ public class FuelSelectState implements State
     public void tearDownUI(){}
     
  
-    public void onEvent(EventType event){}
+    public void onButtonPressEvent(ButtonPressEventType event){}
     
     public void onKeyPressEvent(KeyPressEventType keyEvent){}
+    
+    public void onFuelSelectedEvent(FuelSelectEventType event) {}
+    
+    public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType) {}
+      
+    public void onNozzleEvent(NozzleEventType nozzleEvent) {}
 }
 

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=FuelSelectEventType
+comment0.text=\n\ Write\ a\ description\ of\ class\ FuelSelectEventType\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=id
+comment1.target=FuelSelectEventType(int)
+comment2.params=
+comment2.target=int\ getId()
+numComments=3

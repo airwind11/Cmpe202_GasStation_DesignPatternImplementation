@@ -21,6 +21,6 @@ public class CardAndSwipeUI
     }
     
     public void onSwipe(){
-        parentState.onEvent(EventType.CARD_SWIPED);
+        parentState.onCardSwipeEvent(CardSwipeEventType.CARD_SWIPED);
     }
 }

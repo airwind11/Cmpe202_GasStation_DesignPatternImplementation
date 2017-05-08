@@ -9,19 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Button extends Actor
 {
     ScreenAndKeypad parent;
-    int no;
+    ButtonPressEventType event;
     
     public Button(){}
     
-    public Button(ScreenAndKeypad parent, int no){
+    public Button(ScreenAndKeypad parent, ButtonPressEventType event){
         this.parent = parent;
-        this.no = no;
+        this.event = event;
     }
     
     public void act() 
     {
         if(Greenfoot.mousePressed(this)){
-            parent.keypress("BUTTON", no);
+            parent.buttonpress(this.event);
         }
     }    
 }

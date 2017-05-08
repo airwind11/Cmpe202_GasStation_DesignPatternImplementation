@@ -23,9 +23,15 @@ public class FuelDispensedState implements State
     
     public void tearDownUI(){}
     
-    public void onEvent(EventType event){}
+    public void onButtonPressEvent(ButtonPressEventType buttonEvent){}
+    
+    public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType){}
+      
+    public void onNozzleEvent(NozzleEventType nozzleEvent){}
     
     public void onKeyPressEvent(KeyPressEventType keyEvent){}
+    
+    public void onFuelSelectedEvent(FuelSelectEventType event) {}
 }
 
 

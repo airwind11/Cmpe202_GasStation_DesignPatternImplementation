@@ -6,4 +6,6 @@ comment1.target=FuelSelectButtonGroup(StateEngine)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ FuelSelectButtonGroup\n
 comment2.params=
 comment2.target=void\ render()
-numComments=3
+comment3.params=fuelSelectEvent
+comment3.target=void\ onFuelSelected(FuelSelectEventType)
+numComments=4

@@ -18,9 +18,13 @@ public class FuelSelectButtonGroup
     }
 
     public void render() {
-        context.getWorld().addObject(new OctaneRating87(), 250, 370);
-        context.getWorld().addObject(new OctaneRating89(), 250, 450);
-        context.getWorld().addObject(new OctaneRating91(), 250, 530);
+        context.getWorld().addObject(new OctaneRating87(this), 250, 370);
+        context.getWorld().addObject(new OctaneRating89(this), 250, 450);
+        context.getWorld().addObject(new OctaneRating91(this), 250, 530);
+    }
+    
+    public void onFuelSelected(FuelSelectEventType fuelSelectEvent) {
+        context.onFuelSelected(fuelSelectEvent);
     }
 
 }

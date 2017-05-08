@@ -38,7 +38,7 @@ public class WaitingForZipCodeState implements State
     
     public void tearDownUI(){}
     
-    public void onEvent(EventType event) {
+    public void onButtonPressEvent(ButtonPressEventType event) {
 
 
         int eid = event.getId();
@@ -49,7 +49,7 @@ public class WaitingForZipCodeState implements State
         if (eid > 100) {
             if (eid == 105) {
                 // TODO: If zip code valid?
-                engine.changeStateTo(engine.getFuelSelectState()); return;
+                engine.changeStateTo(engine.getWaitingForFuelSelectState()); return;
             }
             if (eid == 106) {
                 // TODO: Back to initial state
@@ -80,4 +80,11 @@ public class WaitingForZipCodeState implements State
 
         engine.getDisplayConsole().setDynamicMessage(zipPrompt);        
     }
+
+    
+    public void onFuelSelectedEvent(FuelSelectEventType event) {}
+    
+    public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType) {}
+      
+    public void onNozzleEvent(NozzleEventType nozzleEvent) {}
 }

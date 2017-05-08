@@ -41,17 +41,20 @@ public class WaitingForCreditCardState implements State
         //world.removeObjects(objects);
     }
     
-    public void onEvent(EventType event){
-        System.out.println(event);
-        if(event != EventType.CARD_SWIPED){
-            Greenfoot.playSound("beep.wav");
-        }else{
-            this.engine.changeStateTo(engine.getWaitingForZipCodeState());
-        }
-    }
     
     public void onKeyPressEvent(KeyPressEventType keyEvent){
         Greenfoot.playSound("beep.wav");
     }
     
+    public void onButtonPressEvent(ButtonPressEventType event) {
+        Greenfoot.playSound("beep.wav");
+    }
+    
+    public void onFuelSelectedEvent(FuelSelectEventType event) {}
+    
+    public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType) {
+        this.engine.changeStateTo(engine.getWaitingForZipCodeState());
+    }
+      
+    public void onNozzleEvent(NozzleEventType nozzleEvent) {}
 }

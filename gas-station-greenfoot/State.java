@@ -14,7 +14,14 @@ public interface State
     
     void tearDownUI();
     
-    void onEvent(EventType event);
+    void onButtonPressEvent(ButtonPressEventType event);
     
     void onKeyPressEvent(KeyPressEventType event);
+    
+    void onFuelSelectedEvent(FuelSelectEventType event);
+    
+    void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType);
+      
+    void onNozzleEvent(NozzleEventType nozzleEvent);
+
 }

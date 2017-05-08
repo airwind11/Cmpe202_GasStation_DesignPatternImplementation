@@ -10,7 +10,7 @@ public class StateEngine
     private World world;
     State waitingForCreditCardState;
     State waitingForZipCodeState;
-    State fuelSelectState;
+    State waitingForFuelSelectState;
     State dispensingFuelState;
     State fuelDispensedState;
     State receiptConfirmationState;
@@ -32,7 +32,7 @@ public class StateEngine
         
         this.waitingForCreditCardState = new WaitingForCreditCardState(world,this);
         this.waitingForZipCodeState = new WaitingForZipCodeState(world,this);
-        this.fuelSelectState = new FuelSelectState(world, this);
+        this.waitingForFuelSelectState = new WaitingForFuelSelectState(world, this);
         this.dispensingFuelState = new DispensingFuelState(world, this);
         this.fuelDispensedState =  new FuelDispensedState(world, this);
         this.receiptConfirmationState = new ReceiptConfirmationState(world, this);
@@ -81,13 +81,21 @@ public class StateEngine
             break;
         }
     }
+   
+    public void onButtonPressEvent(ButtonPressEventType event) {
+        currentStateObj.onButtonPressEvent(event);
+    }
     
-    public void onEvent(EventType event){
-        currentStateObj.onEvent(event);
+    public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType) {
+        currentStateObj.onCardSwipeEvent(cardSwipeEventType);
     }
     
     public void onKeyPressEvent(KeyPressEventType keyEvent){
         currentStateObj.onKeyPressEvent(keyEvent);
+    }
+    
+    public void onFuelSelected(FuelSelectEventType fuelSelectedEvent){
+        currentStateObj.onFuelSelectedEvent(fuelSelectedEvent);
     }
     
     public State getWaitingForCreditCardState() {
@@ -98,8 +106,8 @@ public class StateEngine
         return waitingForZipCodeState;
     }
     
-    public State getFuelSelectState() {
-        return fuelSelectState;
+    public State getWaitingForFuelSelectState() {
+        return waitingForFuelSelectState;
     }
     
     public ScreenAndKeypad getDisplayConsole()  {
