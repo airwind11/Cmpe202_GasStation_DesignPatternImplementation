@@ -25,7 +25,14 @@ public class WaitingForZipCodeState implements State
         
     }
     
-    public void onExit(){}
+    public void onExit(){
+        engine.getDisplayConsole().setDisplayMessage("");
+        engine.getDisplayConsole().setDynamicMessage("");   
+        
+        // TODO: Find a better way to do this
+        engine.getDisplayConsole().setButtonMappedMessage("", 5);
+        engine.getDisplayConsole().setButtonMappedMessage("", 6);
+    }
     
     public void drawUI(){}
     
@@ -35,7 +42,7 @@ public class WaitingForZipCodeState implements State
 
 
         int eid = event.getId();
-        System.out.println(eid);
+        //System.out.println(eid);
 
         // Handling events other than keyPress
         // TODO: We need to have separate events for these

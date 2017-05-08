@@ -15,7 +15,9 @@ public class FuelSelectState implements State
         this.engine = engine;
     }
     
-    public void onEntry(){}
+    public void onEntry(){
+        engine.getDisplayConsole().setDisplayMessage("Please select fuel type");
+    }
     
     public void onExit(){}
     
@@ -23,6 +25,9 @@ public class FuelSelectState implements State
     
     public void tearDownUI(){}
     
+ 
     public void onEvent(EventType event){}
+    
+    public void onKeyPressEvent(KeyPressEventType keyEvent){}
 }
 

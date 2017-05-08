@@ -24,6 +24,8 @@ public class ReceiptConfirmationState implements State
     public void tearDownUI(){}
     
     public void onEvent(EventType event){}
+    
+    public void onKeyPressEvent(KeyPressEventType keyEvent){}
 }
 
 
