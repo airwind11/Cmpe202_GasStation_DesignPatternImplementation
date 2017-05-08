@@ -50,4 +50,8 @@ public class WaitingForCreditCardState implements State
         }
     }
     
+    public void onKeyPressEvent(KeyPressEventType keyEvent){
+        Greenfoot.playSound("beep.wav");
+    }
+    
 }

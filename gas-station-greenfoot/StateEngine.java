@@ -86,6 +86,10 @@ public class StateEngine
         currentStateObj.onEvent(event);
     }
     
+    public void onKeyPressEvent(KeyPressEventType keyEvent){
+        currentStateObj.onKeyPressEvent(keyEvent);
+    }
+    
     public State getWaitingForCreditCardState() {
         return waitingForCreditCardState;
     }

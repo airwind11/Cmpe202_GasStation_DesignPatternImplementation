@@ -15,4 +15,6 @@ public interface State
     void tearDownUI();
     
     void onEvent(EventType event);
+    
+    void onKeyPressEvent(KeyPressEventType event);
 }

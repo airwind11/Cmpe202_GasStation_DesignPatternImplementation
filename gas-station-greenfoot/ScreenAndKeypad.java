@@ -36,12 +36,14 @@ public class ScreenAndKeypad
         this.world.addObject(new Keypad(this),500,450);
     }
     
+    public void keypress(KeyPressEventType keycode) {
+        parentState.onKeyPressEvent(keycode);
+    }
+    
     public void keypress(String element, int num){
         
         if(element.equalsIgnoreCase("BUTTON")){
             generateButtonEvent(num);
-        }else if(element.equalsIgnoreCase("KEYPAD")){
-            generateKeypadEvent(num);
         }
         
     }
@@ -79,46 +81,6 @@ public class ScreenAndKeypad
           parentState.onEvent(curEvent);
     }
     
-    public void generateKeypadEvent(int num){
-       EventType curEvent = null;  
-          switch(num){
-          case 1:
-            curEvent = EventType.KEYPRESS_NUMPAD_1;
-            break;
-          case 2:
-            curEvent = EventType.KEYPRESS_NUMPAD_2;
-            break;
-          case 3:
-            curEvent = EventType.KEYPRESS_NUMPAD_3;
-            break;  
-          case 4:
-            curEvent = EventType.KEYPRESS_NUMPAD_4;
-            break;
-          case 5:
-            curEvent = EventType.KEYPRESS_NUMPAD_5;
-            break;
-          case 6:
-            curEvent = EventType.KEYPRESS_NUMPAD_6;
-            break;
-          case 7:
-            curEvent = EventType.KEYPRESS_NUMPAD_7;
-            break;
-          case 8:
-            curEvent = EventType.KEYPRESS_NUMPAD_8;
-            break;
-          case 9:
-            curEvent = EventType.KEYPRESS_NUMPAD_9;
-            break;
-          case 0:
-            curEvent = EventType.KEYPRESS_NUMPAD_0;
-            break;
-          case -1:
-            curEvent = EventType.KEYPRESS_NUMPAD_BACK_SPACE;
-            break; 
-          }  
-          
-          parentState.onEvent(curEvent); 
-    }
     
     public void setDisplayMessage(String msg){
         screen.setDisplayMessage(msg);

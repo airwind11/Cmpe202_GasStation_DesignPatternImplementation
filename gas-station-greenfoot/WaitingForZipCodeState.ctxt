@@ -13,4 +13,6 @@ comment5.params=
 comment5.target=void\ tearDownUI()
 comment6.params=event
 comment6.target=void\ onEvent(EventType)
-numComments=7
+comment7.params=keyEvent
+comment7.target=void\ onKeyPressEvent(KeyPressEventType)
+numComments=8

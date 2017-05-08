@@ -50,6 +50,12 @@ public class WaitingForZipCodeState implements State
             }
             
         }
+
+    }
+    
+    public void onKeyPressEvent(KeyPressEventType keyEvent) {
+        int eid = keyEvent.getId();
+        //System.out.println(eid);
         // Beep if the prompt has already 5 characters
         if (zipPrompt.length() == 5 && eid != 10) {
             Greenfoot.playSound("beep.wav"); // TODO: This should probably handled by a speaker class or something in StateEngine
@@ -65,6 +71,6 @@ public class WaitingForZipCodeState implements State
             } 
         }
 
-        engine.getDisplayConsole().setDynamicMessage(zipPrompt);
+        engine.getDisplayConsole().setDynamicMessage(zipPrompt);        
     }
 }
