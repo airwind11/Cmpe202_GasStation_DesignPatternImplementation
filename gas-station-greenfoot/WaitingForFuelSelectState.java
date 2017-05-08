@@ -35,6 +35,12 @@ public class WaitingForFuelSelectState implements State
     
     public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType) {}
       
-    public void onNozzleEvent(NozzleEventType nozzleEvent) {}
+    public void onNozzleEvent(NozzleEventType nozzleEvent) {
+    
+        // TODO : If nozzle event = pressed && fuelTypeSelected?
+            // Then change state to dispensing fuel
+          
+    
+    }
 }
 
