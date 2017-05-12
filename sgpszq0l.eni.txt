@@ -1,0 +1,42 @@
+﻿Merge branch 'master' of https://github.com/airwind11/Cmpe202_GasStation_DesignPatternImplementation
+
+# Conflicts:
+#	gas-station-greenfoot/project.greenfoot
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   gas-station-greenfoot/Button.ctxt
+#	modified:   gas-station-greenfoot/Command.ctxt
+#	modified:   gas-station-greenfoot/DispensingFuelState.ctxt
+#	modified:   gas-station-greenfoot/FuelDispensedState.ctxt
+#	new file:   gas-station-greenfoot/Nozzle.ctxt
+#	new file:   gas-station-greenfoot/Nozzle.java
+#	modified:   gas-station-greenfoot/NozzleEventType.java
+#	modified:   gas-station-greenfoot/PrintreceiptCommand.ctxt
+#	modified:   gas-station-greenfoot/ReceiptConfirmationState.ctxt
+#	modified:   gas-station-greenfoot/Screen.ctxt
+#	modified:   gas-station-greenfoot/ScreenAndKeypad.ctxt
+#	modified:   gas-station-greenfoot/State.ctxt
+#	modified:   gas-station-greenfoot/StateEngine.ctxt
+#	modified:   gas-station-greenfoot/StateEngine.java
+#	modified:   gas-station-greenfoot/WaitingForCreditCardState.ctxt
+#	modified:   gas-station-greenfoot/WaitingForFuelSelectState.ctxt
+#	modified:   gas-station-greenfoot/WaitingForZipCodeState.ctxt
+#	new file:   gas-station-greenfoot/images/nozzle.jpg
+#	modified:   gas-station-greenfoot/project.greenfoot
+#
+
