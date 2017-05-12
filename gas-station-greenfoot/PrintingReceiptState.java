@@ -5,17 +5,21 @@ import greenfoot.*;
  * @author Arun Tej Chennadi
  * @version 1.0
  */
-public class ReceiptConfirmationState implements State 
+public class PrintingReceiptState implements State 
 {
     World world;
     StateEngine engine;
     
-    public ReceiptConfirmationState(World world, StateEngine engine){
+    public PrintingReceiptState(World world, StateEngine engine){
         this.world = world;
         this.engine = engine;
     }
     
-    public void onEntry(){}
+    public void onEntry(){
+        engine.getDisplayConsole().setDisplayMessage("Printing receipt ...");
+        engine.printReceipt();
+        engine.changeStateTo(engine.getThankYouState());
+    }
     
     public void onExit(){}
     

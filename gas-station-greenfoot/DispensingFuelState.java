@@ -29,19 +29,16 @@ public class DispensingFuelState implements State
     
     public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType){}
       
-    public void onNozzleEvent(NozzleEventType nozzleEvent){}
+    public void onNozzleEvent(NozzleEventType nozzleEvent){
+        if (nozzleEvent == NozzleEventType.NOZZLE_RELEASED) {
+            engine.changeStateTo(engine.getWaitingForReceiptConfirmationState());
+        }
+    }
     
     public void onKeyPressEvent(KeyPressEventType keyEvent){}
     
     public void onFuelSelectedEvent(FuelSelectEventType event) {}
     
-   public void doNotPrintReceipt()
-   {
-    }
-    
-    public void printreceipt()
-    {
-    }
     
     public void help()
     {

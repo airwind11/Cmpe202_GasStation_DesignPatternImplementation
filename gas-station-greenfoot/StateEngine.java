@@ -12,8 +12,9 @@ public class StateEngine
     State waitingForZipCodeState;
     State waitingForFuelSelectState;
     State dispensingFuelState;
-    State fuelDispensedState;
-    State receiptConfirmationState;
+    State waitingForReceiptConfirmationState;
+    State printingReceiptState;
+    State thankYouState;
     State helpState;
     
     
@@ -36,8 +37,9 @@ public class StateEngine
         this.waitingForZipCodeState = new WaitingForZipCodeState(world,this);
         this.waitingForFuelSelectState = new WaitingForFuelSelectState(world, this);
         this.dispensingFuelState = new DispensingFuelState(world, this);
-        this.fuelDispensedState =  new FuelDispensedState(world, this);
-        this.receiptConfirmationState = new ReceiptConfirmationState(world, this);
+        this.waitingForReceiptConfirmationState =  new WaitingForReceiptConfirmationState(world, this);
+        this.printingReceiptState = new PrintingReceiptState(world, this);
+        this.thankYouState = new ThankYouState(world, this);
         this.helpState = new HelpState(world, this);
         this.currentState = States.WaitingForCreditCard;
         this.currentStateObj = this.waitingForCreditCardState;
@@ -122,18 +124,32 @@ public class StateEngine
         return waitingForFuelSelectState;
     }
     
-     public State getDispensingFuelState() {
+    public State getDispensingFuelState() {
         return dispensingFuelState;
     }
     
-     public State getFuelDispensedState() {
-        return fuelDispensedState;
+    public State getWaitingForReceiptConfirmationState() {
+        return waitingForReceiptConfirmationState;
+    }
+    
+    public State getPrintingReceiptState() {
+        return printingReceiptState;
+    }
+
+    public State getThankYouState() {
+        return thankYouState;
     }
     
      public State getHelpState() {
         return helpState;
     }    
     
+    public void printReceipt() {
+        Receipt r = new Receipt();
+        getWorld().addObject(r, 1000, 200);
+        Greenfoot.delay(150);
+        getWorld().removeObject(r);
+    }
     
     public ScreenAndKeypad getDisplayConsole()  {
         return simpleUI;
