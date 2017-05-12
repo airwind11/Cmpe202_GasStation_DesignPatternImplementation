@@ -22,9 +22,9 @@ public class WaitingForZipCodeState implements State
         //engine.getDisplayConsole().screen.clearScreen();
         engine.getDisplayConsole().setDisplayMessage("Please enter the zipcode!!");
         engine.getDisplayConsole().setButtonMappedMessage("Confirm", 5);
-        engine.getDisplayConsole().setButtonMappedMessage("Cancel", 6);
+        engine.getDisplayConsole().setButtonMappedMessage("Cancel", 8);
         engine.getButtonAtIndex(4).setCommand(new ConfirmCommand(this));
-        engine.getButtonAtIndex(5).setCommand(new CancelCommand(this));
+        engine.getButtonAtIndex(7).setCommand(new CancelCommand(this));
         zipPrompt = ""; // Reset prompt
         
     }
@@ -37,7 +37,7 @@ public class WaitingForZipCodeState implements State
         
         // TODO: Find a better way to do this
         engine.getDisplayConsole().setButtonMappedMessage("", 5);
-        engine.getDisplayConsole().setButtonMappedMessage("", 6);
+        engine.getDisplayConsole().setButtonMappedMessage("", 8);
        // engine.getDisplayConsole().screen.clearScreen();
     }
     
