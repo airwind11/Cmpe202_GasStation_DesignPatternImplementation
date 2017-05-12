@@ -18,7 +18,7 @@ public class WaitingForCreditCardState implements State
     
     public void onEntry(){
         
-        //engine.getDisplayConsole().screen.clearScreen();
+        engine.getDisplayConsole().setDisplayMessage("Please swipe your card to begin!!"); 
         // this.drawUI();
 
     }
@@ -63,17 +63,13 @@ public class WaitingForCreditCardState implements State
     public void onNozzleEvent(NozzleEventType nozzleEvent) {}
     
         
-    public void printreceipt()
-    {
-    }
+   
     
     public void help()
     {
     }
     
-     public void doNotPrintReceipt()
-   {
-    }
+  
     
     public void confirm()
     {

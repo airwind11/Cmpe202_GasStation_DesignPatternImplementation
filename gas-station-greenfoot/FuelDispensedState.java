@@ -20,13 +20,13 @@ public class FuelDispensedState implements State
          engine.getDisplayConsole().setDisplayMessage("Do You Want  to print Receipt?");
          engine.getDisplayConsole().setButtonMappedMessage("Yes", 1);
         engine.getDisplayConsole().setButtonMappedMessage("No", 4);
-        engine.getButtonAtIndex(0).setCommand(new PrintreceiptCommand(this));
-        engine.getButtonAtIndex(3).setCommand(new DoNotPrintReceiptCommand(this));
+        engine.getButtonAtIndex(0).setCommand(new ConfirmCommand(this));
+        engine.getButtonAtIndex(3).setCommand(new CancelCommand(this));
     }
     
     public void onExit(){
-     engine.getButtonAtIndex(0).setCommand(new PrintreceiptCommand(null));
-        engine.getButtonAtIndex(1).setCommand(new DoNotPrintReceiptCommand(null));
+     engine.getButtonAtIndex(0).setCommand(new ConfirmCommand(null));
+        engine.getButtonAtIndex(1).setCommand(new CancelCommand(null));
     
     
     
@@ -46,7 +46,7 @@ public class FuelDispensedState implements State
     
     public void onFuelSelectedEvent(FuelSelectEventType event) {}
     
-     public void doNotPrintReceipt()
+     private void doNotPrintReceipt()
      
    {
          System.out.println("Ye");
@@ -55,7 +55,7 @@ public class FuelDispensedState implements State
     }
     
         
-    public void printreceipt()
+    private void printreceipt()
     {
           System.out.println("Ye");
           Message Receipt = new Message(300, 75);
@@ -73,11 +73,13 @@ public class FuelDispensedState implements State
     
     public void confirm()
     {
+        this.printreceipt();
     }
     
     
     public void cancel()
     {
+        this.doNotPrintReceipt();
     }
     
    

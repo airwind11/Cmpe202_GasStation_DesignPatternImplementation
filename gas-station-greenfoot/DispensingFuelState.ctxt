@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=DispensingFuelState
-comment0.text=\n\ Intermediate\ state\ which\ is\ entered\ after\ the\ fuel\ type\ is\ selected.\n\ \n\ @author\ Arun\ Tej\ Chennadi\n\ @version\ 1.0\n
+comment0.text=\r\n\ Intermediate\ state\ which\ is\ entered\ after\ the\ fuel\ type\ is\ selected.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
 comment1.params=world\ engine
 comment1.target=DispensingFuelState(greenfoot.World,\ StateEngine)
 comment10.params=event
