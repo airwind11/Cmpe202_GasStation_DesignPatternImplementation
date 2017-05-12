@@ -32,6 +32,10 @@ public class WaitingForFuelSelectState implements State
     
     public void onExit(){
         
+        engine.getDisplayConsole().setDisplayMessage("Select fuel type and remove nozzle");
+        engine.getDisplayConsole().setButtonMappedMessage("", 1);
+        engine.getDisplayConsole().setButtonMappedMessage("", 4);
+        
         engine.getButtonAtIndex(0).setCommand(null);
         engine.getButtonAtIndex(3).setCommand(null);
         engine.getDisplayConsole().setButtonMappedMessage("", 1);
@@ -83,7 +87,6 @@ public class WaitingForFuelSelectState implements State
     {
         this.engine.changeStateTo(engine.getHelpState());
     }
-    
     
     public void confirm() {}
     

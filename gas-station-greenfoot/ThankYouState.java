@@ -56,5 +56,3 @@ public class ThankYouState implements State
 
     
 }
-
-

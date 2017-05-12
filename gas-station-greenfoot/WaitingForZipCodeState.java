@@ -10,6 +10,7 @@ public class WaitingForZipCodeState implements State
     World world;
     StateEngine engine;
     String zipPrompt = "";
+    int trialcount = 1;
     
     public WaitingForZipCodeState(World world, StateEngine engine){
         this.world = world;
@@ -21,9 +22,9 @@ public class WaitingForZipCodeState implements State
         //engine.getDisplayConsole().screen.clearScreen();
         engine.getDisplayConsole().setDisplayMessage("Please enter the zipcode!!");
         engine.getDisplayConsole().setButtonMappedMessage("Confirm", 5);
-        engine.getDisplayConsole().setButtonMappedMessage("Cancel", 6);
+        engine.getDisplayConsole().setButtonMappedMessage("Cancel", 8);
         engine.getButtonAtIndex(4).setCommand(new ConfirmCommand(this));
-        engine.getButtonAtIndex(5).setCommand(new CancelCommand(this));
+        engine.getButtonAtIndex(7).setCommand(new CancelCommand(this));
         zipPrompt = ""; // Reset prompt
         
     }
@@ -36,7 +37,7 @@ public class WaitingForZipCodeState implements State
         
         // TODO: Find a better way to do this
         engine.getDisplayConsole().setButtonMappedMessage("", 5);
-        engine.getDisplayConsole().setButtonMappedMessage("", 6);
+        engine.getDisplayConsole().setButtonMappedMessage("", 8);
        // engine.getDisplayConsole().screen.clearScreen();
     }
     
@@ -95,23 +96,38 @@ public class WaitingForZipCodeState implements State
     public void onNozzleEvent(NozzleEventType nozzleEvent) {}
     
         
-    public void printreceipt()
-    {
-    }
+  
     
     public void help()
     {
     }
     
-     public void doNotPrintReceipt()
-   {
-    }
+  
     
     
     public void confirm()
     {
+        if(zipPrompt.length()==5)
+        {
         System.out.println("Yo");
         this.engine.changeStateTo(engine.getWaitingForFuelSelectState());
+    }
+    
+    else if(trialcount<=3)
+    {
+        trialcount = trialcount+1;
+        engine.getDisplayConsole().setDisplayMessage("Invalid Zipcode!! Please try again");
+        Greenfoot.delay(100);
+        this.engine.changeStateTo(engine.getWaitingForZipCodeState());
+        
+    }
+    
+    else
+    {
+         engine.getDisplayConsole().setDisplayMessage("Maximum Attempt Exceeded!!!");
+          Greenfoot.delay(100);
+        this.engine.changeStateTo(engine.getWaitingForCreditCardState());
+    }
     }
     
     

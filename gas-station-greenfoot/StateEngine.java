@@ -58,8 +58,7 @@ public class StateEngine
     private void render() {
         simpleUI = new ScreenAndKeypad(this, this.world);
         simpleUI.render();
-        simpleUI.setDisplayMessage("Please swipe your card to begin!!"); 
-        
+               
         cardSwipe = new CardAndSwipeUI(this, this.world);
         cardSwipe.render();
         

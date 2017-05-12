@@ -27,7 +27,8 @@ public class CardSwipe extends Actor
     {
         CreditCard cc =(CreditCard) getOneIntersectingObject(CreditCard.class);
         if(cc != null){
-            world.removeObject(cc);
+            //world.removeObject(cc);
+             cc.setLocation(1100, 200);
             parent.onSwipe();
         }
     }    

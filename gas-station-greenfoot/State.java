@@ -13,9 +13,9 @@ public interface State
     void drawUI();
     
     void tearDownUI();
-    
+
     void help();
-    
+
     void confirm();    
     
     void cancel();
