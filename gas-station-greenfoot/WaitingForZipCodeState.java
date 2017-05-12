@@ -110,7 +110,13 @@ public class WaitingForZipCodeState implements State
         if(zipPrompt.length()==5)
         {
         System.out.println("Yo");
-        this.engine.changeStateTo(engine.getWaitingForFuelSelectState());
+        
+        if (engine.getGasStationType() == GasStationType.PICKY_GAS_STATION) {
+            this.engine.changeStateTo(engine.getWaitingForReceiptConfirmationState());
+        } else {
+            this.engine.changeStateTo(engine.getWaitingForFuelSelectState());
+        }
+
     }
     
     else if(trialcount<=3)

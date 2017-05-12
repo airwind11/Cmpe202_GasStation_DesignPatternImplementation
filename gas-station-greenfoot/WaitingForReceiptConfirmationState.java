@@ -54,13 +54,25 @@ public class WaitingForReceiptConfirmationState implements State
     
     public void confirm()
     {
-        this.engine.changeStateTo(engine.getPrintingReceiptState());
+        this.engine.setShouldPrintReceipt(true);
+        if (engine.getGasStationType() == GasStationType.PICKY_GAS_STATION) {
+            this.engine.changeStateTo(engine.getWaitingForFuelSelectState());
+        } else {
+            this.engine.changeStateTo(engine.getPrintingReceiptState());
+        }
+
     }
     
     
     public void cancel()
     {
-        this.engine.changeStateTo(engine.getThankYouState());
+        this.engine.setShouldPrintReceipt(false);
+        if (engine.getGasStationType() == GasStationType.PICKY_GAS_STATION) {
+            this.engine.changeStateTo(engine.getWaitingForFuelSelectState());
+        } else {
+            this.engine.changeStateTo(engine.getPrintingReceiptState());
+        }
+
     }
     
    

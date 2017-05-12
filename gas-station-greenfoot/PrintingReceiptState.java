@@ -16,8 +16,10 @@ public class PrintingReceiptState implements State
     }
     
     public void onEntry(){
-        engine.getDisplayConsole().setDisplayMessage("Printing receipt ...");
-        engine.printReceipt();
+        if (engine.getShouldPrintReceipt()) {
+            engine.getDisplayConsole().setDisplayMessage("Printing receipt ...");
+            engine.printReceipt();
+        }
         engine.changeStateTo(engine.getThankYouState());
     }
     

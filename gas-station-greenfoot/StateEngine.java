@@ -22,14 +22,16 @@ public class StateEngine
     State currentStateObj;
     String type;
     
+    private Boolean shouldPrintReceipt = true;
     private ScreenAndKeypad simpleUI;
     private CardAndSwipeUI cardSwipe;
     private FuelSelectButtonGroup fuelSelectButtonGroup;
     
     public StateEngine(World world, String type){
         this.world = world;
+ 
         this.type = type;
-        
+        //this.type = GasStationType.PICKY_GAS_STATION;
         // Render initial state
         render();
         
@@ -51,6 +53,10 @@ public class StateEngine
     
     }
     
+    
+    public GasStationType getGasStationType() {
+        return this.type;
+    }
     public World getWorld() {
         return world;
     }
@@ -158,6 +164,13 @@ public class StateEngine
         return getDisplayConsole().getButtonAtIndex(i);
     }
 
+    public void setShouldPrintReceipt(Boolean b) {
+        this.shouldPrintReceipt = b;
+    }
+    
+    public Boolean getShouldPrintReceipt() {
+        return this.shouldPrintReceipt;
+    }
     
 
 }
