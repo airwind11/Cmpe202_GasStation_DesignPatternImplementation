@@ -20,13 +20,13 @@ public class StateEngine
     
     States currentState;
     State currentStateObj;
-    GasStationType type;
+    String type;
     
     private ScreenAndKeypad simpleUI;
     private CardAndSwipeUI cardSwipe;
     private FuelSelectButtonGroup fuelSelectButtonGroup;
     
-    public StateEngine(World world, GasStationType type){
+    public StateEngine(World world, String type){
         this.world = world;
         this.type = type;
         

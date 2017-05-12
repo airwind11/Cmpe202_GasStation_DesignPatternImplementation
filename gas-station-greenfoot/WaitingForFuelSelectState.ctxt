@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=WaitingForFuelSelectState
-comment0.text=\n\ Intermediate\ state\ where\ the\ fuel\ selection\ options\ are\ shown.\n\ \n\ @author\ Arun\ Tej\ Chennadi\n\ @version\ 1.0\n
+comment0.text=\r\n\ Intermediate\ state\ where\ the\ fuel\ selection\ options\ are\ shown.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
 comment1.params=world\ engine
 comment1.target=WaitingForFuelSelectState(greenfoot.World,\ StateEngine)
 comment10.params=nozzleEvent

@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import javax.swing.JOptionPane;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -22,7 +22,15 @@ public class SimpleGasStation extends World
     
     
     private void prepare(){
-       StateEngine engine1 = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
+        
+          String[] choices = { "SIMPLE_GAS_STATION", "PICKY_GAS_STATION", "GAS_STATION_WITH_CARWASH" };
+    String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
+        "Choose GasStation", JOptionPane.QUESTION_MESSAGE, null,choices,"");
+
+        System.out.println("here");
+
+       StateEngine engine1 = new StateEngine(this,input);
+       //StateEngine engine1 = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
       //  StateEngine engine = new StateEngine();
     }
 }

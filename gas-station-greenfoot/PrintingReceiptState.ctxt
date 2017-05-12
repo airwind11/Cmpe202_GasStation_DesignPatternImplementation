@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=PrintingReceiptState
-comment0.text=\n\ Intermediate\ state\ whose\ position\ can\ change\ depending\ upon\ scenario.\n\ \n\ @author\ Arun\ Tej\ Chennadi\n\ @version\ 1.0\n
+comment0.text=\r\n\ Intermediate\ state\ whose\ position\ can\ change\ depending\ upon\ scenario.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
 comment1.params=world\ engine
 comment1.target=PrintingReceiptState(greenfoot.World,\ StateEngine)
 comment10.params=event
