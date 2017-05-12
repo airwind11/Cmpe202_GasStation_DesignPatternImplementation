@@ -22,6 +22,6 @@ public class PickyGasStation extends World
     
     
     private void prepare(){
-        StateEngine engine = new StateEngine(this,GasStationType.PICKY_GAS_STATION);
+       // StateEngine engine = new StateEngine(this,GasStationType.PICKY_GAS_STATION);
     }
 }
