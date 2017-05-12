@@ -17,6 +17,6 @@ public PrintreceiptCommand(State s)
 
 public void execute()
 {
-    currentState.printreceipt();
+    //currentState.printreceipt();
 }
 }

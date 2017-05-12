@@ -11,6 +11,6 @@ public DoNotPrintReceiptCommand(State s)
 
 public void execute()
 {
-    currentState.doNotPrintReceipt();
+    //currentState.doNotPrintReceipt();
 }
 }

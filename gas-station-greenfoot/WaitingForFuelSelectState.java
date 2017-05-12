@@ -34,7 +34,8 @@ public class WaitingForFuelSelectState implements State
         
         engine.getButtonAtIndex(0).setCommand(null);
         engine.getButtonAtIndex(3).setCommand(null);
-       //engine.getDisplayConsole().screen.clearScreen();
+        engine.getDisplayConsole().setButtonMappedMessage("", 1);
+        engine.getDisplayConsole().setButtonMappedMessage("", 4);
     
     }
     
@@ -72,10 +73,6 @@ public class WaitingForFuelSelectState implements State
         }
     }
     
-        
-    public void printreceipt()
-    {
-    }
     
     public void dispenseFuel() {
         System.out.println("dispensing fuel");
@@ -84,26 +81,16 @@ public class WaitingForFuelSelectState implements State
     
     public void help()
     {
-        System.out.println("HelpTesting");
-        this.engine.changeStateTo(engine.getFuelDispensedState());
+        this.engine.changeStateTo(engine.getHelpState());
     }
     
-     public void doNotPrintReceipt()
-   {
-    }
     
-    public void confirm()
-    {
-    }
-    
+    public void confirm() {}
     
 
-    
-    
     public void cancel()
-     {
-          System.out.println("cancelledTransaction");
-        this.engine.changeStateTo(engine.getWaitingForZipCodeState());
+    {
+        this.engine.changeStateTo(engine.getWaitingForCreditCardState());
     }
     
 }

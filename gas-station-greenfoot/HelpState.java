@@ -10,9 +10,16 @@ public class HelpState implements State
         this.engine = engine;
     }
     
-    public void onEntry(){}
+    public void onEntry(){
+        engine.getDisplayConsole().setDisplayMessage("Please see the cashier.");
+        engine.getDisplayConsole().setButtonMappedMessage("Back", 1);        
+        engine.getButtonAtIndex(0).setCommand(new CancelCommand(this));
+    }
     
-    public void onExit(){}
+    public void onExit(){
+        engine.getDisplayConsole().setDisplayMessage("");
+        engine.getDisplayConsole().setButtonMappedMessage("", 1);   
+    }
     
     public void drawUI(){}
     
@@ -28,10 +35,6 @@ public class HelpState implements State
     
     public void onFuelSelectedEvent(FuelSelectEventType event) {}
     
-   public void doNotPrintReceipt()    {}
-    
-    public void printreceipt() {}
-   
     
     public void help()  {}
    
@@ -39,7 +42,9 @@ public class HelpState implements State
     public void confirm() {}
   
     
-    public void cancel()  {}
+    public void cancel()  {
+         this.engine.changeStateTo(engine.getWaitingForCreditCardState());
+    }
    
        
 

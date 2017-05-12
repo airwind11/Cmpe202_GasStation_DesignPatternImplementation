@@ -14,11 +14,7 @@ public interface State
     
     void tearDownUI();
     
-    void printreceipt();
-    
     void help();
-    
-    void doNotPrintReceipt();
     
     void confirm();    
     

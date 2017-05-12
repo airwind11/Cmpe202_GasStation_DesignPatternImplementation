@@ -130,6 +130,9 @@ public class StateEngine
         return fuelDispensedState;
     }
     
+     public State getHelpState() {
+        return helpState;
+    }    
     
     
     public ScreenAndKeypad getDisplayConsole()  {
