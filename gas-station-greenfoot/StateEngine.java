@@ -64,6 +64,11 @@ public class StateEngine
         fuelSelectButtonGroup = new FuelSelectButtonGroup(this);
         fuelSelectButtonGroup.render();
         
+        Nozzle nozzle = new Nozzle(this);
+        getWorld().addObject(nozzle, 750, 450);
+        
+        Car car = new Car();
+        getWorld().addObject(car, 950, 450);
     }
     
     public void changeStateTo(State newState){
@@ -99,6 +104,10 @@ public class StateEngine
     
     public void onFuelSelected(FuelSelectEventType fuelSelectedEvent){
         currentStateObj.onFuelSelectedEvent(fuelSelectedEvent);
+    }
+    
+    public void onNozzleEvent(NozzleEventType nozzleEvent) {
+        currentStateObj.onNozzleEvent(nozzleEvent);
     }
     
     public State getWaitingForCreditCardState() {

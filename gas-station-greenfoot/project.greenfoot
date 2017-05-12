@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Fri May 12 11:34:25 PDT 2017
+#Fri May 12 13:29:21 PDT 2017
 class.OctaneRating89.image=octane89.png
 class.ScreenAndKeypad.superclass=
 target24.type=ClassTarget
@@ -781,14 +781,14 @@ target11.x=0
 dependency19.to=State
 dependency9.type=UsesDependency
 dependency72.to=State
-editor.fx.0.y=0
-editor.fx.0.x=184
+editor.fx.0.y=30
+editor.fx.0.x=185
 dependency8.to=StateEngine
 target26.showInterface=false
 target28.name=ScreenAndKeypad
 dependency66.to=FuelSelectEventType
 class.Keypad.superclass=greenfoot.Actor
-mainWindow.height=1042
+mainWindow.height=1030
 dependency139.to=ButtonPressEventType
 target42.width=150
 dependency8.from=DispensingFuelState
