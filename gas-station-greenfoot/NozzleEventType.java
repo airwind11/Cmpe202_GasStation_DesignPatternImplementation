@@ -6,7 +6,7 @@
  */
 public enum NozzleEventType  
 {
-    NOZZLE_PRESSED(301), NOZZLE_RELEASED(302);
+    NOZZLE_PRESSED(0), NOZZLE_RELEASED(1);
 
     private int id;
 
