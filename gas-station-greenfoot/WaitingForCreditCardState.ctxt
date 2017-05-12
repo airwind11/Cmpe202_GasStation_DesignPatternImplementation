@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=WaitingForCreditCardState
-comment0.text=\r\n\ Initial\ State\ where\ the\ gas\ station\ waits\ for\ a\ card\ swipe.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
+comment0.text=\n\ Initial\ State\ where\ the\ gas\ station\ waits\ for\ a\ card\ swipe.\n\ \n\ @author\ Arun\ Tej\ Chennadi\n\ @version\ 1.0\n
 comment1.params=world\ engine
 comment1.target=WaitingForCreditCardState(greenfoot.World,\ StateEngine)
 comment10.params=nozzleEvent
