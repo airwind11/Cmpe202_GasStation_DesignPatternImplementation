@@ -14,6 +14,18 @@ public interface State
     
     void tearDownUI();
     
+    void printreceipt();
+    
+    void connectHelp();
+    
+    void doNotPrintReceipt();
+    
+    void validateCreditCard();
+    
+    void cancelZipcodeEntry();
+    
+    void cancelTransaction();
+    
     void onButtonPressEvent(ButtonPressEventType event);
     
     void onKeyPressEvent(KeyPressEventType event);

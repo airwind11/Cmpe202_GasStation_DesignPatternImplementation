@@ -21,6 +21,8 @@ public class WaitingForZipCodeState implements State
         engine.getDisplayConsole().setDisplayMessage("Please enter the zipcode!!");
         engine.getDisplayConsole().setButtonMappedMessage("Confirm", 5);
         engine.getDisplayConsole().setButtonMappedMessage("Cancel", 6);
+        engine.getButtonAtIndex(4).setCommand(new ConfirmZipCodeCommand(this));
+        engine.getButtonAtIndex(5).setCommand(new CancelZipCommand(this));
         zipPrompt = ""; // Reset prompt
         
     }
@@ -87,4 +89,37 @@ public class WaitingForZipCodeState implements State
     public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType) {}
       
     public void onNozzleEvent(NozzleEventType nozzleEvent) {}
+    
+        
+    public void printreceipt()
+    {
+    }
+    
+    public void connectHelp()
+    {
+    }
+    
+     public void doNotPrintReceipt()
+   {
+    }
+    
+    
+    public void validateCreditCard()
+    {
+        System.out.println("Yo");
+        this.engine.changeStateTo(engine.getDispensingFuelState());
+    }
+    
+    
+    public void cancelZipcodeEntry()
+    {
+         System.out.println("Ye");
+        this.engine.changeStateTo(engine.getWaitingForCreditCardState());
+    }
+    
+    
+    public void cancelTransaction()
+   {
+    }
+    
 }

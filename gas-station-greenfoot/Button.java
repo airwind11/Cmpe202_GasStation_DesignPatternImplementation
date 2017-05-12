@@ -10,18 +10,21 @@ public class Button extends Actor
 {
     ScreenAndKeypad parent;
     ButtonPressEventType event;
+    Command mappedCommand;
+    
     
     public Button(){}
     
-    public Button(ScreenAndKeypad parent, ButtonPressEventType event){
-        this.parent = parent;
-        this.event = event;
+    public void setCommand(Command tobemapped)
+    {
+        this.mappedCommand = tobemapped;
     }
     
     public void act() 
     {
         if(Greenfoot.mousePressed(this)){
-            parent.buttonpress(this.event);
+            //parent.buttonpress(this.event);
+            this.mappedCommand.execute();
         }
     }    
 }

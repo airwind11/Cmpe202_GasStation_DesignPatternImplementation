@@ -57,4 +57,32 @@ public class WaitingForCreditCardState implements State
     }
       
     public void onNozzleEvent(NozzleEventType nozzleEvent) {}
+    
+        
+    public void printreceipt()
+    {
+    }
+    
+    public void connectHelp()
+    {
+    }
+    
+     public void doNotPrintReceipt()
+   {
+    }
+    
+    public void validateCreditCard()
+    {
+    }
+    
+    
+    public void cancelZipcodeEntry()
+    {
+    }
+    
+    
+    public void cancelTransaction()
+   {
+    }
+    
 }

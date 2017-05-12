@@ -110,10 +110,18 @@ public class StateEngine
         return waitingForFuelSelectState;
     }
     
+     public State getDispensingFuelState() {
+        return dispensingFuelState;
+    }
+    
+    
     public ScreenAndKeypad getDisplayConsole()  {
         return simpleUI;
     }
     
+    public Button getButtonAtIndex(int i) {
+        return getDisplayConsole().getButtonAtIndex(i);
+    }
 
     
 

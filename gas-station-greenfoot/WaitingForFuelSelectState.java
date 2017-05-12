@@ -42,5 +42,33 @@ public class WaitingForFuelSelectState implements State
           
     
     }
+    
+        
+    public void printreceipt()
+    {
+    }
+    
+    public void connectHelp()
+    {
+    }
+    
+     public void doNotPrintReceipt()
+   {
+    }
+    
+    public void validateCreditCard()
+    {
+    }
+    
+    
+    public void cancelZipcodeEntry()
+    {
+    }
+    
+    
+    public void cancelTransaction()
+   {
+    }
+    
 }
 

@@ -10,11 +10,21 @@ public class ScreenAndKeypad
     World world;
     StateEngine parentState;
     Screen screen;
+    Button[] buttons = new Button[8];
     
     public ScreenAndKeypad(StateEngine s, World world){
         this.parentState = s;
         this.world = world;
         screen = new Screen(this.world);
+        
+        for (int i = 0; i < 8; i++) {
+            buttons[i] = new Button();
+        }
+        
+    }
+    
+    public Button getButtonAtIndex(int i) {
+        return buttons[i];
     }
     
     public void render(){
@@ -22,16 +32,17 @@ public class ScreenAndKeypad
         this.world.addObject(screen,500,180);
         
         //draw left buttons
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_1),150,100);
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_2),150,150);
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_3),150,200);
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_4),150,250);
+       
+        this.world.addObject(buttons[0],150,100);
+        this.world.addObject(buttons[1],150,150);
+        this.world.addObject(buttons[2],150,200);
+        this.world.addObject(buttons[3],150,250);
         
         //draw right buttons
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_5),850,100);
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_6),850,150);
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_7),850,200);
-        this.world.addObject(new Button(this, ButtonPressEventType.BUTTON_8),850,250);
+        this.world.addObject(buttons[4],850,100);
+        this.world.addObject(buttons[5],850,150);
+        this.world.addObject(buttons[6],850,200);
+        this.world.addObject(buttons[7],850,250);
         
         this.world.addObject(new Keypad(this),500,450);
     }

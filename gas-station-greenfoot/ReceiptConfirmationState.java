@@ -32,6 +32,36 @@ public class ReceiptConfirmationState implements State
     public void onKeyPressEvent(KeyPressEventType keyEvent){}
     
     public void onFuelSelectedEvent(FuelSelectEventType event) {}
+    
+     public void doNotPrintReceipt()
+   {
+    }
+    
+        
+    public void printreceipt()
+    {
+    }
+    
+    public void connectHelp()
+    {
+    }
+    
+    
+    
+    public void validateCreditCard()
+    {
+    }
+    
+    
+    public void cancelZipcodeEntry()
+    {
+    }
+    
+    
+    public void cancelTransaction()
+   {
+    }
+    
 }
 
 

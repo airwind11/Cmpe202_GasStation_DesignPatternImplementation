@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=CancelZipCommand
+comment1.params=s
+comment1.target=CancelZipCommand(State)
+comment2.params=
+comment2.target=void\ execute()
+numComments=3
