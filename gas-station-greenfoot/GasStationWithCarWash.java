@@ -22,6 +22,6 @@ public class GasStationWithCarWash extends World
     
     
     private void prepare(){
-        StateEngine engine = new StateEngine(this,GasStationType.GAS_STATION_WITH_CARWASH);
+        //StateEngine engine = new StateEngine(this,GasStationType.GAS_STATION_WITH_CARWASH);
     }
 }

@@ -22,7 +22,7 @@ public class SimpleGasStation extends World
     
     
     private void prepare(){
-        StateEngine engine1 = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
-        StateEngine engine = new StateEngine();
+       StateEngine engine1 = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
+      //  StateEngine engine = new StateEngine();
     }
 }
