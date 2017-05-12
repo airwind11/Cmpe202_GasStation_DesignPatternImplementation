@@ -85,11 +85,11 @@ public class Screen extends Actor
         
       for(Message c:buttonMappedMessages)
       {
-          c=null;
+        c.setText("");
           
         }
-mainDisplay=null;
-dynamicMessage=null;
+this.mainDisplay.setText("");
+this.dynamicMessage.setText("");
         
         
     }

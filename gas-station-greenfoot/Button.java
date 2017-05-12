@@ -24,7 +24,14 @@ public class Button extends Actor
     {
         if(Greenfoot.mousePressed(this)){
             //parent.buttonpress(this.event);
+            if(mappedCommand==null)
+            {
+                
+            }
+            else
+            {
             this.mappedCommand.execute();
+        }
         }
     }    
 }

@@ -17,7 +17,7 @@ public class WaitingForFuelSelectState implements State
     }
     
     public void onEntry(){
-        engine.getDisplayConsole().screen.clearScreen();
+       // engine.getDisplayConsole().screen.clearScreen();
         engine.getDisplayConsole().setDisplayMessage("Please select fuel type");
          engine.getDisplayConsole().setButtonMappedMessage("Cancel Transaction", 1);
         engine.getDisplayConsole().setButtonMappedMessage("Help", 4);
@@ -28,7 +28,7 @@ public class WaitingForFuelSelectState implements State
     public void onExit(){
         
         
-        engine.getDisplayConsole().screen.clearScreen();
+       //engine.getDisplayConsole().screen.clearScreen();
     
     }
     

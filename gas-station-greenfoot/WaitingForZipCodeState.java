@@ -18,7 +18,7 @@ public class WaitingForZipCodeState implements State
     
     
     public void onEntry(){
-        engine.getDisplayConsole().screen.clearScreen();
+        //engine.getDisplayConsole().screen.clearScreen();
         engine.getDisplayConsole().setDisplayMessage("Please enter the zipcode!!");
         engine.getDisplayConsole().setButtonMappedMessage("Confirm", 5);
         engine.getDisplayConsole().setButtonMappedMessage("Cancel", 6);
@@ -30,12 +30,14 @@ public class WaitingForZipCodeState implements State
     
     public void onExit(){
         engine.getDisplayConsole().setDisplayMessage("");
-        engine.getDisplayConsole().setDynamicMessage("");   
+        engine.getDisplayConsole().setDynamicMessage("");
+          engine.getButtonAtIndex(4).setCommand(null);
+        engine.getButtonAtIndex(5).setCommand(null);
         
         // TODO: Find a better way to do this
         engine.getDisplayConsole().setButtonMappedMessage("", 5);
         engine.getDisplayConsole().setButtonMappedMessage("", 6);
-        engine.getDisplayConsole().screen.clearScreen();
+       // engine.getDisplayConsole().screen.clearScreen();
     }
     
     public void drawUI(){}
