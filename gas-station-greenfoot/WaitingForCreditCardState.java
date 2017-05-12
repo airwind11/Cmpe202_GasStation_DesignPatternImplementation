@@ -17,6 +17,8 @@ public class WaitingForCreditCardState implements State
     }
     
     public void onEntry(){
+        
+        engine.getDisplayConsole().screen.clearScreen();
         // this.drawUI();
 
     }
@@ -24,6 +26,8 @@ public class WaitingForCreditCardState implements State
     
     public void onExit(){
         // this.tearDownUI();
+        
+        engine.getDisplayConsole().screen.clearScreen();
     }
     
     public void drawUI(){

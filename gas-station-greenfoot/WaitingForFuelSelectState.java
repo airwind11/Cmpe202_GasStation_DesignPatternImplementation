@@ -17,14 +17,20 @@ public class WaitingForFuelSelectState implements State
     }
     
     public void onEntry(){
+        engine.getDisplayConsole().screen.clearScreen();
         engine.getDisplayConsole().setDisplayMessage("Please select fuel type");
          engine.getDisplayConsole().setButtonMappedMessage("Cancel Transaction", 1);
-        engine.getDisplayConsole().setButtonMappedMessage("Help", 2);
+        engine.getDisplayConsole().setButtonMappedMessage("Help", 4);
         engine.getButtonAtIndex(0).setCommand(new CancelTransactionCommand(this));
         engine.getButtonAtIndex(1).setCommand(new ConnectHelpCommand(this));
     }
     
-    public void onExit(){}
+    public void onExit(){
+        
+        
+        engine.getDisplayConsole().screen.clearScreen();
+    
+    }
     
     public void drawUI(){}
     

@@ -79,5 +79,19 @@ public class Screen extends Actor
         buttonMappedMessages[buttonNo - 1].setText(msg);
     }
     
+    
+    public void clearScreen()
+    {
+        
+      for(Message c:buttonMappedMessages)
+      {
+          c=null;
+          
+        }
+mainDisplay=null;
+dynamicMessage=null;
+        
+        
+    }
 
 }
