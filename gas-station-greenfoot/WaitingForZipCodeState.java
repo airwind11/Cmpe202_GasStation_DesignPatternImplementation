@@ -118,7 +118,7 @@ public class WaitingForZipCodeState implements State
     public void cancelZipcodeEntry()
     {
          System.out.println("Ye");
-        this.engine.changeStateTo(engine.getWaitingForCreditCardState());
+        this.engine.changeStateTo(engine.getFuelDispensedState());
     }
     
     

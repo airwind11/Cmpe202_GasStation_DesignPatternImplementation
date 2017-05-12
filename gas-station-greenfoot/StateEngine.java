@@ -117,6 +117,11 @@ public class StateEngine
         return dispensingFuelState;
     }
     
+     public State getFuelDispensedState() {
+        return fuelDispensedState;
+    }
+    
+    
     
     public ScreenAndKeypad getDisplayConsole()  {
         return simpleUI;

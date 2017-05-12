@@ -22,12 +22,13 @@ public class WaitingForFuelSelectState implements State
          engine.getDisplayConsole().setButtonMappedMessage("Cancel Transaction", 1);
         engine.getDisplayConsole().setButtonMappedMessage("Help", 4);
         engine.getButtonAtIndex(0).setCommand(new CancelTransactionCommand(this));
-        engine.getButtonAtIndex(1).setCommand(new ConnectHelpCommand(this));
+        engine.getButtonAtIndex(3).setCommand(new ConnectHelpCommand(this));
     }
     
     public void onExit(){
         
-        
+         engine.getButtonAtIndex(0).setCommand(null);
+        engine.getButtonAtIndex(3).setCommand(null);
        //engine.getDisplayConsole().screen.clearScreen();
     
     }
@@ -60,6 +61,8 @@ public class WaitingForFuelSelectState implements State
     
     public void connectHelp()
     {
+        System.out.println("HelpTesting");
+        this.engine.changeStateTo(engine.getFuelDispensedState());
     }
     
      public void doNotPrintReceipt()
