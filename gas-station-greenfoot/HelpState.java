@@ -33,15 +33,14 @@ public class HelpState implements State
     public void printreceipt() {}
    
     
-    public void connectHelp()  {}
+    public void help()  {}
    
     
-    public void validateCreditCard() {}
+    public void confirm() {}
   
     
-    public void cancelZipcodeEntry()  {}
+    public void cancel()  {}
    
        
-    public void cancelTransaction()  {}
 
     }

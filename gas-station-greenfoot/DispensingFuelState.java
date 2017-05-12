@@ -15,7 +15,9 @@ public class DispensingFuelState implements State
         this.engine = engine;
     }
     
-    public void onEntry(){}
+    public void onEntry(){
+       engine.getDisplayConsole().setDisplayMessage("Dispensing fuel ...");
+    }
     
     public void onExit(){}
     
@@ -41,18 +43,18 @@ public class DispensingFuelState implements State
     {
     }
     
-    public void connectHelp()
+    public void help()
     {
     }
     
     
     
-    public void validateCreditCard()
+    public void confirm()
     {
     }
     
     
-    public void cancelZipcodeEntry()
+    public void cancel()
     {
     }
     

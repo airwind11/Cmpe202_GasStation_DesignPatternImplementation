@@ -65,25 +65,22 @@ public class FuelDispensedState implements State
         this.engine.changeStateTo(engine.getWaitingForCreditCardState());
     }
     
-    public void connectHelp()
+    public void help()
     {
     }
     
     
     
-    public void validateCreditCard()
+    public void confirm()
     {
     }
     
     
-    public void cancelZipcodeEntry()
+    public void cancel()
     {
     }
     
-    
-    public void cancelTransaction()
-   {
-    }
+   
     
 }
 

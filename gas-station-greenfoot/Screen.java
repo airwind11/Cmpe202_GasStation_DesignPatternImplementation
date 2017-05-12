@@ -29,7 +29,7 @@ public class Screen extends Actor
     }
     
     public void setDisplayMessage(String msg){
-        this.mainDisplay = new Message(300, 75);
+        this.mainDisplay = new Message(350, 75);
         this.world.addObject(this.mainDisplay, 500, 180);
         this.mainDisplay.setText(msg);
     }

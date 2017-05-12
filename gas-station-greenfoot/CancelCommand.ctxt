@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=CancelTransactionCommand
+comment0.target=CancelCommand
 comment1.params=s
-comment1.target=CancelTransactionCommand(State)
+comment1.target=CancelCommand(State)
 comment2.params=
 comment2.target=void\ execute()
 numComments=3

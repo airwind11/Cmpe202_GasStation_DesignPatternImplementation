@@ -10,6 +10,7 @@ public class WaitingForFuelSelectState implements State
     World world;
     StateEngine engine;
     FuelSelectEventType fuelType = null;
+    NozzleEventType nozzleEvent = null;
     
     public WaitingForFuelSelectState(World world, StateEngine engine){
         this.world = world;
@@ -17,17 +18,21 @@ public class WaitingForFuelSelectState implements State
     }
     
     public void onEntry(){
+        // Resetting state on entry
+        fuelType = null;
+        nozzleEvent = null;
        // engine.getDisplayConsole().screen.clearScreen();
-        engine.getDisplayConsole().setDisplayMessage("Please select fuel type");
-         engine.getDisplayConsole().setButtonMappedMessage("Cancel Transaction", 1);
+        engine.getDisplayConsole().setDisplayMessage("Select fuel type and remove nozzle");
+        engine.getDisplayConsole().setButtonMappedMessage("Cancel Transaction", 1);
         engine.getDisplayConsole().setButtonMappedMessage("Help", 4);
-        engine.getButtonAtIndex(0).setCommand(new CancelTransactionCommand(this));
-        engine.getButtonAtIndex(3).setCommand(new ConnectHelpCommand(this));
+        
+        engine.getButtonAtIndex(0).setCommand(new CancelCommand(this));
+        engine.getButtonAtIndex(3).setCommand(new HelpCommand(this));
     }
     
     public void onExit(){
         
-         engine.getButtonAtIndex(0).setCommand(null);
+        engine.getButtonAtIndex(0).setCommand(null);
         engine.getButtonAtIndex(3).setCommand(null);
        //engine.getDisplayConsole().screen.clearScreen();
     
@@ -42,16 +47,29 @@ public class WaitingForFuelSelectState implements State
     
     public void onKeyPressEvent(KeyPressEventType keyEvent){}
     
-    public void onFuelSelectedEvent(FuelSelectEventType event) {}
+    public void onFuelSelectedEvent(FuelSelectEventType event) {
+        fuelType = event;
+        
+        if (this.nozzleEvent == null) {
+           engine.getDisplayConsole().setDisplayMessage("Please remove nozzle");
+        } else {
+           dispenseFuel();
+        }
+        
+    }
     
     public void onCardSwipeEvent(CardSwipeEventType cardSwipeEventType) {}
       
     public void onNozzleEvent(NozzleEventType nozzleEvent) {
-    
-        // TODO : If nozzle event = pressed && fuelTypeSelected?
-            // Then change state to dispensing fuel
-          
-    
+        if (nozzleEvent == NozzleEventType.NOZZLE_PRESSED) {
+            this.nozzleEvent = nozzleEvent;
+            
+            if (this.fuelType == null) {
+               engine.getDisplayConsole().setDisplayMessage("Please select fuel type");
+            } else {
+               dispenseFuel();
+            }        
+        }
     }
     
         
@@ -59,7 +77,12 @@ public class WaitingForFuelSelectState implements State
     {
     }
     
-    public void connectHelp()
+    public void dispenseFuel() {
+        System.out.println("dispensing fuel");
+        this.engine.changeStateTo(engine.getDispensingFuelState());  
+    }
+    
+    public void help()
     {
         System.out.println("HelpTesting");
         this.engine.changeStateTo(engine.getFuelDispensedState());
@@ -69,17 +92,15 @@ public class WaitingForFuelSelectState implements State
    {
     }
     
-    public void validateCreditCard()
+    public void confirm()
     {
     }
     
     
-    public void cancelZipcodeEntry()
-    {
-    }
+
     
     
-    public void cancelTransaction()
+    public void cancel()
      {
           System.out.println("cancelledTransaction");
         this.engine.changeStateTo(engine.getWaitingForZipCodeState());

@@ -16,15 +16,13 @@ public interface State
     
     void printreceipt();
     
-    void connectHelp();
+    void help();
     
     void doNotPrintReceipt();
     
-    void validateCreditCard();
+    void confirm();    
     
-    void cancelZipcodeEntry();
-    
-    void cancelTransaction();
+    void cancel();
     
     void onButtonPressEvent(ButtonPressEventType event);
     

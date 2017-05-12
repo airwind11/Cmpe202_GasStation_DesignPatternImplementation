@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=ConnectHelpCommand
+comment0.target=ConfirmCommand
 comment1.params=s
-comment1.target=ConnectHelpCommand(State)
+comment1.target=ConfirmCommand(State)
 comment2.params=
 comment2.target=void\ execute()
 numComments=3
