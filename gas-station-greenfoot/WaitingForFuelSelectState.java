@@ -18,6 +18,10 @@ public class WaitingForFuelSelectState implements State
     
     public void onEntry(){
         engine.getDisplayConsole().setDisplayMessage("Please select fuel type");
+         engine.getDisplayConsole().setButtonMappedMessage("Cancel Transaction", 1);
+        engine.getDisplayConsole().setButtonMappedMessage("Help", 2);
+        engine.getButtonAtIndex(0).setCommand(new CancelTransactionCommand(this));
+        engine.getButtonAtIndex(1).setCommand(new ConnectHelpCommand(this));
     }
     
     public void onExit(){}
@@ -67,7 +71,9 @@ public class WaitingForFuelSelectState implements State
     
     
     public void cancelTransaction()
-   {
+     {
+          System.out.println("cancelledTransaction");
+        this.engine.changeStateTo(engine.getWaitingForZipCodeState());
     }
     
 }

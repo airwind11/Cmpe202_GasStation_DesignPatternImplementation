@@ -107,7 +107,7 @@ public class WaitingForZipCodeState implements State
     public void validateCreditCard()
     {
         System.out.println("Yo");
-        this.engine.changeStateTo(engine.getDispensingFuelState());
+        this.engine.changeStateTo(engine.getWaitingForFuelSelectState());
     }
     
     

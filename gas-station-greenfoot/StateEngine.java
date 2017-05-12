@@ -14,6 +14,8 @@ public class StateEngine
     State dispensingFuelState;
     State fuelDispensedState;
     State receiptConfirmationState;
+    State helpState;
+    
     
     States currentState;
     State currentStateObj;
@@ -36,6 +38,7 @@ public class StateEngine
         this.dispensingFuelState = new DispensingFuelState(world, this);
         this.fuelDispensedState =  new FuelDispensedState(world, this);
         this.receiptConfirmationState = new ReceiptConfirmationState(world, this);
+        this.helpState = new HelpState(world, this);
         this.currentState = States.WaitingForCreditCard;
         this.currentStateObj = this.waitingForCreditCardState;
         
