@@ -18,7 +18,7 @@ public class SimpleGasStation extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1400, 800, 1);
         prepare();
-        StateEngine engine1 = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
+       // StateEngine engine1 = new StateEngine(this,GasStationType.SIMPLE_GAS_STATION);
     }
 
 

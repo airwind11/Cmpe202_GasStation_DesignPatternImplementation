@@ -2,23 +2,13 @@
 comment0.target=StateEngine
 comment0.text=\r\n\ The\ controller\ class\ which\ executes\ state\ changes.\r\n\ \r\n\ @author\ Arun\ Tej\ Chennadi\r\n\ @version\ 1.0\r\n
 comment1.params=world\ type
-<<<<<<< HEAD
 comment1.target=StateEngine(greenfoot.World,\ java.lang.String)
-comment10.params=fuelSelectedEvent
-comment10.target=void\ onFuelSelected(FuelSelectEventType)
-comment11.params=nozzleEvent
-comment11.target=void\ onNozzleEvent(NozzleEventType)
-comment12.params=
-comment12.target=State\ getWaitingForCreditCardState()
-=======
-comment1.target=StateEngine(greenfoot.World,\ GasStationType)
 comment10.params=keyEvent
 comment10.target=void\ onKeyPressEvent(KeyPressEventType)
 comment11.params=fuelSelectedEvent
 comment11.target=void\ onFuelSelected(FuelSelectEventType)
 comment12.params=nozzleEvent
 comment12.target=void\ onNozzleEvent(NozzleEventType)
->>>>>>> 8f4dedc32f02320b9271670b2a57cb358e7d27d8
 comment13.params=
 comment13.target=State\ getWaitingForCreditCardState()
 comment14.params=

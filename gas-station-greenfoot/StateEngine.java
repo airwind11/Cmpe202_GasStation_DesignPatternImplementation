@@ -20,7 +20,7 @@ public class StateEngine
     
     States currentState;
     State currentStateObj;
-    String type;
+    GasStationType type;
     
     private Boolean shouldPrintReceipt = true;
     private ScreenAndKeypad simpleUI;
@@ -30,7 +30,12 @@ public class StateEngine
     public StateEngine(World world, String type){
         this.world = world;
  
-        this.type = type;
+        if (type.equals("SIMPLE_GAS_STATION")) {
+            this.type = GasStationType.SIMPLE_GAS_STATION;
+        } else if (type.equals("PICKY_GAS_STATION")) {
+            this.type = GasStationType.PICKY_GAS_STATION;
+        }
+        
         //this.type = GasStationType.PICKY_GAS_STATION;
         // Render initial state
         render();
