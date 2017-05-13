@@ -31,9 +31,17 @@ public class DispensingFuelState implements State
       
     public void onNozzleEvent(NozzleEventType nozzleEvent){
         if (nozzleEvent == NozzleEventType.NOZZLE_RELEASED) {
-            if (engine.getGasStationType() == GasStationType.PICKY_GAS_STATION) {
+            if (engine.getGasStationType() == GasStationType.PICKY_GAS_STATION) 
+            {
                 this.engine.changeStateTo(engine.getPrintingReceiptState());
-            } else {
+            } 
+            else if (engine.getGasStationType() == GasStationType.GAS_STATION_WITH_CARWASH)
+            {
+                this.engine.changeStateTo(engine.getCarWashState());
+                
+            }
+                        
+            else  {
                 this.engine.changeStateTo(engine.getWaitingForReceiptConfirmationState());
             }
 

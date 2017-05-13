@@ -16,7 +16,7 @@ public class StateEngine
     State printingReceiptState;
     State thankYouState;
     State helpState;
-    
+    State carWashState;
     
     States currentState;
     State currentStateObj;
@@ -35,6 +35,12 @@ public class StateEngine
         } else if (type.equals("PICKY_GAS_STATION")) {
             this.type = GasStationType.PICKY_GAS_STATION;
         }
+                else if (type.equals("PICKY_GAS_STATION")) {
+            this.type = GasStationType.PICKY_GAS_STATION;
+        }
+            else if (type.equals("GAS_STATION_WITH_CARWASH")) {
+            this.type = GasStationType.GAS_STATION_WITH_CARWASH;
+        }
         
         //this.type = GasStationType.PICKY_GAS_STATION;
         // Render initial state
@@ -46,6 +52,7 @@ public class StateEngine
         this.dispensingFuelState = new DispensingFuelState(world, this);
         this.waitingForReceiptConfirmationState =  new WaitingForReceiptConfirmationState(world, this);
         this.printingReceiptState = new PrintingReceiptState(world, this);
+        this.carWashState = new CarWashState(world, this);
         this.thankYouState = new ThankYouState(world, this);
         this.helpState = new HelpState(world, this);
         this.currentState = States.WaitingForCreditCard;
@@ -126,6 +133,10 @@ public class StateEngine
         return waitingForCreditCardState;
     }
     
+    public State getCarWashState() {
+        return carWashState;
+    }
+    
     public State getWaitingForZipCodeState() {
         return waitingForZipCodeState;
     }
@@ -156,9 +167,14 @@ public class StateEngine
     
     public void printReceipt() {
         Receipt r = new Receipt();
-        getWorld().addObject(r, 1000, 200);
+        getWorld().addObject(r, 850, 550);
+        Message receipt= new Message(100, 100);
+        this.world.addObject(receipt, 850, 550);
+        receipt.setText("Receipt");
         Greenfoot.delay(150);
         getWorld().removeObject(r);
+        getWorld().removeObject(receipt);
+                
     }
     
     public ScreenAndKeypad getDisplayConsole()  {

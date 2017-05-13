@@ -39,15 +39,7 @@ public class PrintingReceiptState implements State
     
     public void onFuelSelectedEvent(FuelSelectEventType event) {}
     
-     public void doNotPrintReceipt()
-   {
-    }
-    
-        
-    public void printreceipt()
-    {
-    }
-    
+      
     public void help()
     {
     }
