@@ -33,7 +33,7 @@ public class WaitingForZipCodeState implements State
         engine.getDisplayConsole().setDisplayMessage("");
         engine.getDisplayConsole().setDynamicMessage("");
           engine.getButtonAtIndex(4).setCommand(null);
-        engine.getButtonAtIndex(5).setCommand(null);
+        engine.getButtonAtIndex(7).setCommand(null);
         
         // TODO: Find a better way to do this
         engine.getDisplayConsole().setButtonMappedMessage("", 5);
